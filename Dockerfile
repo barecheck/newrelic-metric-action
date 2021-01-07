@@ -1,6 +1,6 @@
 FROM alpine:3.12.3
 
-RUN apk --no-cache add curl jq
+RUN apk --no-cache add curl jq gzip
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 # COPY entrypoint.sh /entrypoint.sh
