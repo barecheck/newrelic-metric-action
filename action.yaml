@@ -1,0 +1,29 @@
+name: "New Relic Metric Reporter"
+author: "Barecheck"
+description: "Sends Barecheck metrics to the newrelic as custom events"
+branding:
+  icon: "upload-cloud"
+  color: "yellow"
+inputs:
+  insertApiKey:
+    description: "Your New Relic Insert API key."
+    required: true
+  accountId:
+    description: "Your New Relic account ID. Custom events representing your test run will be posted to this account."
+    required: true
+  metricName:
+    description: "Your Barecheck metric that you would like to receive as an event"
+    required: true
+  metricValue:
+    description: "Barecheck metric value."
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  env:
+    NEW_RELIC_INSERT_API_KEY: ${{ inputs.insertApiKey }}
+    NEW_RELIC_ACCOUNT_ID: ${{ inputs.accountId }}
+    NEW_RELIC_REGION: ${{ inputs.region }}
+    NEW_RELIC_METRIC_NAME: ${{ inputs.metricName }}
+    NEW_RELIC_METRIC_VALUE: ${{ inputs.metricValue }}

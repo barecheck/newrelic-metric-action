@@ -1,2 +1,3 @@
 # newrelic-metric-action
-Github Action to send custom metric to newrelic
+
+Github Action that sends Barecheck metrics to newrelic
