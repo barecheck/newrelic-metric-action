@@ -51,3 +51,13 @@ Data can be queried in New Relic One [Chart Builder](https://docs.newrelic.com/d
 ```
 newrelic nrql query --accountId 12345 --query 'SELECT * from Barecheck'
 ```
+
+#### Build New Relic Dashboards
+
+Dashboard isgreat choice tp combine all your code metrics together. Here is a few examples what you can build with barecheck metrics.
+
+- Code coverage dashboard to know current code coverage in your application
+
+```
+SELECT latest(value) as '%' FROM Barecheck WHERE metric='codeCoverage' SINCE 1 month ago
+```
