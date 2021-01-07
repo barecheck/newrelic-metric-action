@@ -13,5 +13,6 @@ jobs:
         with:
           insertApiKey: ${{ secrets.NEW_RELIC_INSERT_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+          region: EU
           metricName: "testMetric"
           metricValue: 45.6
