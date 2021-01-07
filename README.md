@@ -1,3 +1,3 @@
 # newrelic-metric-action
 
-Github Action that sends Barecheck metrics to newrelic
+Github Action that sends Custom Events to newrelic
