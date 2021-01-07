@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Sends New Relic test metric
         id: newrelic-metric
-        uses: barecheck/newrelic-metric-action@v0.1-beta.1
+        uses: barecheck/newrelic-metric-action@v0.2-beta.1
         with:
           insertApiKey: ${{ secrets.NEW_RELIC_INSERT_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
