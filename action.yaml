@@ -1,4 +1,4 @@
-name: "New Relic Metric Reporter"
+name: "Barechek Newrelic Metric Reporter"
 author: "Barecheck"
 description: "Sends Barecheck metrics to the newrelic as custom events"
 branding:
