@@ -24,6 +24,5 @@ runs:
   env:
     NEW_RELIC_INSERT_API_KEY: ${{ inputs.insertApiKey }}
     NEW_RELIC_ACCOUNT_ID: ${{ inputs.accountId }}
-    NEW_RELIC_REGION: ${{ inputs.region }}
     NEW_RELIC_METRIC_NAME: ${{ inputs.metricName }}
     NEW_RELIC_METRIC_VALUE: ${{ inputs.metricValue }}
