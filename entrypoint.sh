@@ -16,10 +16,11 @@ API_ENDPOINT=$API_HOST/v1/accounts/${NEW_RELIC_ACCOUNT_ID}/events
 timestamp=$(date +%s)
 
 JSON_STRING=$( jq -n \
-    --arg metric "$NEW_RELIC_METRIC_NAME" \
-    --arg value "$NEW_RELIC_METRIC_VALUE" \
+    --arg metric "$EVENT_METRIC_NAME" \
+    --arg value "$EVENT_METRIC_VALUE" \
     --arg timestamp "${timestamp}" \
-'{eventType: "Barecheck", metric: $metric, value: $value, timestamp: $timestamp}' )
+    --arg app "${EVENT_APPLICATION}" \
+'{eventType: "Barecheck", metric: $metric, value: $value, application: $app, timestamp: $timestamp}' )
 
 echo "Sending Events..."
 echo $JSON_STRING

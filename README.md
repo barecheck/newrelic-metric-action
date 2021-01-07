@@ -11,6 +11,7 @@ Github Action to send Barecheck metric events to newrelic
 | `insertApiKey` | **yes**  | -       | Your New Relic [Insert API key](https://docs.newrelic.com/docs/apis/get-started/intro-apis/types-new-relic-api-keys#event-insert-key). |
 | `metricName`   | **yes**  | -       | Your Barecheck metric that you would like to receive as an event                                                                       |
 | `metricValue`  | **yes**  | -       | Barecheck metric value.                                                                                                                |
+| `application`  | no       | -       | Application from where metric sent                                                                                                     |
 
 ## Example usage
 
@@ -40,6 +41,7 @@ jobs:
           insertApiKey: ${{ secrets.NEW_RELIC_INSERT_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           region: EU
+          application: "some-app-name"
           metricName: "testMetric"
           metricValue: 45.6
 ```

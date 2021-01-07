@@ -17,6 +17,10 @@ inputs:
   metricValue:
     description: "Barecheck metric value."
     required: true
+  application:
+    description: "Application from where metrics come"
+    required: false
+    default: ""
   region:
     description: "The geographical region for your New Relic account - US or EU. Default: US"
     required: false
@@ -28,6 +32,7 @@ runs:
   env:
     NEW_RELIC_INSERT_API_KEY: ${{ inputs.insertApiKey }}
     NEW_RELIC_ACCOUNT_ID: ${{ inputs.accountId }}
-    NEW_RELIC_METRIC_NAME: ${{ inputs.metricName }}
-    NEW_RELIC_METRIC_VALUE: ${{ inputs.metricValue }}
+    EVENT_METRIC_NAME: ${{ inputs.metricName }}
+    EVENT_METRIC_VALUE: ${{ inputs.metricValue }}
+    EVENT_APPLICATION: ${{ inputs.application }}
     NEW_RELIC_REGION: ${{ inputs.region }}
