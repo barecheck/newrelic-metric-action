@@ -15,4 +15,3 @@ jobs:
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           metricName: "testMetric"
           metricValue: 45.6
-          send-summary-comment: true
