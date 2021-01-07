@@ -1,7 +1,17 @@
 #!/bin/sh
 
-# TODO: ability to pass region
-API_ENDPOINT=https://insights-collector.eu01.nr-data.net/v1/accounts/${NEW_RELIC_ACCOUNT_ID}/events
+if [ "$NEW_RELIC_REGION" == "US" ]
+then
+    API_HOST=https://insights-collector.newrelic.com
+elif [ "$NEW_RELIC_REGION" == "EU" ]
+then
+    API_HOST=https://insights-collector.eu01.nr-data.net
+else
+    echo "::error:: Region only might be one of the following options: EU, US"
+    exit 1
+fi
+
+API_ENDPOINT=$API_HOST/v1/accounts/${NEW_RELIC_ACCOUNT_ID}/events
 
 timestamp=$(date +%s)
 

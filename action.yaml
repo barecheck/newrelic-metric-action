@@ -1,4 +1,4 @@
-name: "New Relic Metric Reporter"
+name: "Barechek Newrelic Metric Reporter"
 author: "Barecheck"
 description: "Sends Barecheck metrics to the newrelic as custom events"
 branding:
@@ -17,6 +17,10 @@ inputs:
   metricValue:
     description: "Barecheck metric value."
     required: true
+  region:
+    description: "The geographical region for your New Relic account - US or EU. Default: US"
+    required: false
+    default: US
 
 runs:
   using: "docker"
@@ -24,6 +28,6 @@ runs:
   env:
     NEW_RELIC_INSERT_API_KEY: ${{ inputs.insertApiKey }}
     NEW_RELIC_ACCOUNT_ID: ${{ inputs.accountId }}
-    NEW_RELIC_REGION: ${{ inputs.region }}
     NEW_RELIC_METRIC_NAME: ${{ inputs.metricName }}
     NEW_RELIC_METRIC_VALUE: ${{ inputs.metricValue }}
+    NEW_RELIC_REGION: ${{ inputs.region }}

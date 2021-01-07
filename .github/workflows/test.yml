@@ -1,0 +1,18 @@
+name: Send Test New Relic Metric
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Sends New Relic test metric
+        id: newrelic-metric
+        uses: ./
+        with:
+          insertApiKey: ${{ secrets.NEW_RELIC_INSERT_API_KEY }}
+          accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+          region: EU
+          metricName: "testMetric"
+          metricValue: 45.6
