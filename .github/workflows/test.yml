@@ -15,4 +15,5 @@ jobs:
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           region: EU
           metricName: "testMetric"
+          application: "barecheck-app"
           metricValue: 45.6
